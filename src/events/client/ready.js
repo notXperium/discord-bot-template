@@ -37,7 +37,7 @@ module.exports = {
             command.dir = path;
             command.category = filter.dir.match(/([^\/]*)\/*$/)?.[1] ?? "invalid";
 
-            if (!command.name || !command.description || !command.type)
+            if (!command.name || !command.description || !command.type || !command.usage)
                 return console.log("[COMMAND]".blue + ` Invalid Arguments At ${path}`.white);
 
             if (command.permission && !perm.includes(command.permission))

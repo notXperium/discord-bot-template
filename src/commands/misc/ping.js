@@ -3,6 +3,7 @@ const { ApplicationCommandType } = require("discord.js");
 module.exports = {
     name: "ping",
     description: "show bot ping",
+    usage: "</ping>",
     type: ApplicationCommandType.ChatInput,
 
     run(interaction, client) {

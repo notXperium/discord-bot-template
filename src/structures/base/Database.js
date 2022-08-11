@@ -15,7 +15,7 @@ class Database {
                         ` Connected To Database | System: ${process.platform} | Latency: ${Math.round(Date.now() - start)}ms`.white
                 );
             })
-            .catch(console.error);
+            .catch(( )=> null);
     }
 }
 

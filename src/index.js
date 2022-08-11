@@ -2,6 +2,7 @@ const { Client, Collection, EmbedBuilder } = require("discord.js");
 const Config = require("./structures/json/config.json");
 const Database = require("./structures/base/Database");
 const embed = require("./structures/json/embed.json");
+const { blue, white} = require("colors");
 require("dotenv").config();
 const fs = require("fs");
 

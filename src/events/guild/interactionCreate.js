@@ -1,8 +1,10 @@
+const { InteractionType } = require("discord.js");
+
 module.exports = {
     name: "interactionCreate",
     once: false,
 
-    run(interaction, client) {
+    async run(interaction, client) {
         if (interaction.isChatInputCommand()) {
             const cmd = client.commands.get(interaction.commandName);
 
@@ -27,8 +29,7 @@ module.exports = {
                                 this.embed("failed")
                                     .setTitle("You are not allowed to run this command!")
                                     .setDescription(
-                                        `**Only [${this.user.username.toUpperCase()}](${
-                                            this.utils.url.support
+                                        `**Only [${this.user.username.toUpperCase()}](${this.utils.url.support
                                         }) Developers are allowed to run this command!**`
                                     )
                             ],
@@ -57,6 +58,27 @@ module.exports = {
                 } else {
                     console.error();
                 }
+            }
+        } else if (interaction.type === InteractionType.ApplicationCommandAutocomplete) {
+            const cmd = client.commands.get(interaction.commandName);
+
+            if (!cmd) return (
+                interaction.reply({
+                    embeds: [
+                        client
+                            .embed()
+                            .setColor("#f23a3a")
+                            .setTitle("Invalid Command")
+                            .setDescription("This Command is not a valid command!\n*Please try again later!*")
+                    ],
+                    ephemeral: true
+                })
+            );
+
+            try {
+               await cmd.autocomplete(interaction, client);
+            } catch (e) {
+                console.error(e)
             }
         }
     }
