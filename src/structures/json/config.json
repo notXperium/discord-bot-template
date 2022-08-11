@@ -1,0 +1,7 @@
+{
+    "bot": {
+        "owner": "YOUR_ID",
+        "guild": "YOUR_GUILD",
+        "id": "YOUR_BOT_ID"
+    }
+}
