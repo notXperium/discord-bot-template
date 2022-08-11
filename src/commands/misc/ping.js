@@ -18,7 +18,7 @@ module.exports = {
                         .setTitle("Ping")
                         .setDescription(
                             `**Latency: [${
-                                interaction.createdTimestamp - Date.now()
+                                 Date.now() - interaction.createdTimestamp
                             }](https://github.com/notXperium) ms \nApi Ping: [${
                                 client.ws.ping
                             }](https://github.com/notXperium) ms**`
