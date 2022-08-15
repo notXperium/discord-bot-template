@@ -26,7 +26,7 @@ module.exports = {
                     return interaction
                         .reply({
                             embeds: [
-                                this.embed("failed")
+                                client.embed("failed")
                                     .setTitle("You are not allowed to run this command!")
                                     .setDescription(
                                         `**Only [${this.user.username.toUpperCase()}](${this.utils.url.support
@@ -41,7 +41,7 @@ module.exports = {
                     return interaction
                         .reply({
                             embeds: [
-                                this.embed("failed")
+                                client.embed("failed")
                                     .setTitle("You are not allowed to run this command!")
                                     .setDescription(`Missing Permission: \`${cmd.permission}\``)
                             ],
