@@ -41,7 +41,7 @@ module.exports = {
                 return console.log("[COMMAND]".blue + ` Invalid Arguments At ${path}`.white);
 
             if (command.permission && !perm.includes(command.permission))
-                return console.log("[COMMAND]".blue + ` Invalid Permission At ${command.data.name}`.white);
+                return console.log("[COMMAND]".blue + ` Invalid Permission At ${command.name}`.white);
 
             if (command.devOnly) command.description = command.description + " (dev Only)";
 
